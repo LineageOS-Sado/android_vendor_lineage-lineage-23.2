@@ -59,6 +59,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     QuickAccessWallet
 
+# Moment and status bar lyric
+PRODUCT_PACKAGES += \
+    MomentArc \
+    LyricFetchExt
+
 # TextClassifier
 PRODUCT_PACKAGES += \
     libtextclassifier_annotator_en_model \
