@@ -31,8 +31,10 @@ endif
 
 ifeq ($(WITH_GMS), true)
     LINEAGE_CUSTOM_TYPE := GMS
+    LINEAGE_UPDATER_VARIANT := gms
 else
     LINEAGE_CUSTOM_TYPE := VANILLA
+    LINEAGE_UPDATER_VARIANT := vanilla
 endif
 
 LINEAGE_VERSION_SUFFIX := $(LINEAGE_CUSTOM_MODEL)-$(LINEAGE_CUSTOM_TYPE)-$(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)
@@ -50,4 +52,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lineage.version=$(LINEAGE_VERSION) \
     ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
+    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
+    lineage.updater.uri=https://raw.githubusercontent.com/LineageOS-Sado/ota/main/{device}-$(LINEAGE_UPDATER_VARIANT).json
