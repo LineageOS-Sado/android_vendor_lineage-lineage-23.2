@@ -36,6 +36,10 @@ ifeq ($(WITH_GMS),true)
             else
                 $(call inherit-product-if-exists, vendor/partner_gms/products/gms.mk)
             endif
+        else ifneq (,$(wildcard vendor/pixel/gms/products/gms.mk))
+            # LineageOS-Sado carries the extracted Pixel GMS package here.
+            # Use it when the standard partner_gms repository is not present.
+            $(call inherit-product, vendor/pixel/gms/products/gms.mk)
         endif
 
         ifneq (,$(wildcard vendor/partner_modules))
